@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: tomcat
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: tomcat:latest
+  source:
+    git:
+      uri: https://github.com/yuji-k64613/openshift_tomcat.git
+    type: Git
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: tomcat_base:latest
+    type: Docker
+  triggers:
+  - imageChange: {}
+    type: ImageChange
