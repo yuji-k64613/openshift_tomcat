@@ -15,7 +15,7 @@ spec:
     dockerStrategy:
       from:
         kind: ImageStreamTag
-        name: tomcat_base:latest
+        name: tomcat:8.0.43-jre8
     type: Docker
   triggers:
   - imageChange: {}
